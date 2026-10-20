@@ -1,0 +1,26 @@
+# generator
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+generator/work/
+generator/output/
+work/
+output/
+*.pdf
+
+# app
+app/node_modules/
+app/.expo/
+app/dist/
+app/web-build/
+app/ios/
+app/android/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.DS_Store

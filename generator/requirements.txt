@@ -1,0 +1,4 @@
+# Python 3.10 - 3.12 recommended (Kokoro pins numpy 1.26, which has no 3.13 wheels).
+kokoro>=0.9.4
+pymupdf>=1.24
+numpy

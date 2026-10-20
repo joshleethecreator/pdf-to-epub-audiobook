@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf2audiobook"
+version = "0.1.0"
+description = "Turn a PDF into a chaptered audiobook (.m4b) with Kokoro TTS, resumable at any point."
+requires-python = ">=3.10,<3.13"
+dependencies = ["kokoro>=0.9.4", "pymupdf>=1.24", "numpy"]
+
+[project.optional-dependencies]
+test = ["pytest", "reportlab"]
+
+[project.scripts]
+pdf2audiobook = "pdf2audiobook.cli:main"
+
+[tool.setuptools]
+packages = ["pdf2audiobook"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
