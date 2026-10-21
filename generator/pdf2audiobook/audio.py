@@ -64,7 +64,8 @@ def _run_ffmpeg(args: list[str]) -> None:
 def _concat_list(files: list[Path], list_path: Path) -> None:
     lines = []
     for f in files:
-        escaped = str(f.resolve()).replace("'", "'\\''")
+        # Forward slashes work on Windows too and avoid ffmpeg treating "\\" as an escape.
+        escaped = f.resolve().as_posix().replace("'", "'\\''")
         lines.append(f"file '{escaped}'")
     list_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

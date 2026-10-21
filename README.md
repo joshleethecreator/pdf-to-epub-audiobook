@@ -50,6 +50,23 @@ pip install -r requirements.txt
 # ffmpeg: macOS `brew install ffmpeg` · Ubuntu `sudo apt install ffmpeg` · Windows `winget install ffmpeg`
 ```
 
+<details>
+<summary><b>Windows (PowerShell) step by step</b></summary>
+
+```powershell
+winget install Git.Git Python.Python.3.12 Gyan.FFmpeg OpenJS.NodeJS.LTS
+# close and reopen PowerShell so the new programs are found, then:
+cd "$HOME\Desktop"
+git clone https://github.com/joshleethecreator/pdf-to-epub-audiobook pdf-to-epub-audiobook
+cd pdf-to-epub-audiobook\generator
+py -3.12 -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m pdf2audiobook generate "C:\path\to\book.pdf"
+```
+
+Avoid `&` in the folder name: it breaks some Windows tools (npm, .bat files).
+</details>
+
 **Check the chapters first (optional but recommended):**
 
 ```bash
